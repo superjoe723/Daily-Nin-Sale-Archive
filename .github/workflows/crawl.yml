@@ -1,0 +1,26 @@
+name: Daily Web Crawling
+on:
+  schedule:
+    - cron: '0 0 * * *' # UTC 0시 = KST 9시
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt # 필요 시
+    - name: Run crawler
+      run: python nin_crawler.py
+    - name: Commit results
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add crawling_results/*
+        git commit -m "Add daily crawl result $(date +%Y%m%d)"
+        git push
