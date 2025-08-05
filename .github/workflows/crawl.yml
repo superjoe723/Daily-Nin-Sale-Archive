@@ -2,6 +2,7 @@ name: Daily Web Crawling
 on:
   schedule:
     - cron: '0 0 * * *' # UTC 0시 = KST 9시
+  workflow_dispatch:  # 수동 실행 옵션
 jobs:
   crawl:
     runs-on: ubuntu-latest
