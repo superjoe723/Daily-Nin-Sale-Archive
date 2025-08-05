@@ -41,7 +41,7 @@ def scrape_page(soup):
                     original_price_num = float(original_price)
                     sale_price_num = float(sale_price)
                     sale_rate = (1 - (sale_price_num / original_price_num)) * 100
-                    sale_rate = f"{sale_rate:.2f}%"  # 소수점 둘째 자리로 포맷
+                    sale_rate = f"{sale_rate:.0f}%"  # 소수점 0째 자리로 포맷
                 except (ValueError, ZeroDivisionError):
                     sale_rate = "계산 불가"
             else:
