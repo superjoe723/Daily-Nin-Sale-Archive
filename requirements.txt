@@ -1,5 +1,2 @@
 requests
 BeautifulSoup4
-csv
-datetime
-os
