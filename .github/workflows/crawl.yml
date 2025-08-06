@@ -17,7 +17,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt # 필요 시
     - name: Run crawler
-      run: python nin_crawler_v4.py
+      run: python nin_crawler_v5.py
     - name: Commit results
       run: |
         git config --local user.email "action@github.com"
