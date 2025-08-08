@@ -25,7 +25,7 @@ except FileNotFoundError as e:
 
 # 게임 이름 컬럼이 'game name'이라고 가정
 # 실제 컬럼 이름이 다를 경우 수정 필요
-game_col = 'game name'
+game_col = 'Game Name'
 
 # 게임 이름 리스트 추출
 games_yesterday = set(df1[game_col].dropna())
