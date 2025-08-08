@@ -24,7 +24,7 @@ jobs:
         pip install pandas
 
     - name: Run script
-      run: nin_report_v1.py
+      run: python nin_report_v1.py
 
     - name: Commit and push report
       run: |
