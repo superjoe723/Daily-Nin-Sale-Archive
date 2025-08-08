@@ -13,7 +13,7 @@ yesterday_date_str = yesterday_date.strftime("%y%m%d")
 # 파일 경로 설정
 file1_path = f"crawling_results/nintendo_sale_{yesterday_date_str}.csv"
 file2_path = f"crawling_results/nintendo_sale_{current_date_str}.csv"
-output_path = f"report_{current_date_str}.csv"
+output_path = f"report_results/report_{current_date_str}.csv"
 
 # CSV 파일 읽기
 try:
