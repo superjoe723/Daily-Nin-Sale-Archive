@@ -1,7 +1,7 @@
 name: Daily Web Crawling
 on:
   schedule:
-    - cron: '0 20 * * *' # UTC 20시 = KST 5시
+    - cron: '0 18 * * *' # UTC 18시 = KST 3시
   workflow_dispatch:  # 수동 실행 옵션
 jobs:
   crawl:
