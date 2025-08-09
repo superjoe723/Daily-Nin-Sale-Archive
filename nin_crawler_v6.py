@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import csv
 from datetime import datetime
 import os
+import time
 
 # 판매 페이지의 기본 URL
 base_url = "https://store.nintendo.co.kr/digital/sale?product_list_order=position&product_list_dir=asc"
@@ -56,6 +57,8 @@ def scrape_page(soup):
             if page_link != "링크 없음":
                 try:
                     # 개별 게임 페이지 요청
+                    import random
+time.sleep(random.uniform(1, 3))  # 1~3초 사이 랜덤 딜레이
                     game_response = requests.get(page_link)
                     game_response.raise_for_status()
                     game_soup = BeautifulSoup(game_response.content, "html.parser")
