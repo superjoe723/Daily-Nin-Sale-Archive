@@ -2,7 +2,7 @@ name: Daily Game Report
 
 on:
   schedule:
-    - cron: '10 0 * * *'  # 매일 KST 0시 10분
+    - cron: '30 0 * * *'  # 매일 KST 0시 30분
   workflow_dispatch:  # 수동 실행 가능
 
 jobs:
