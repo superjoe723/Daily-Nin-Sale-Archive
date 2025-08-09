@@ -22,6 +22,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        git pull origin main  # 원격 변경을 먼저 가져와 병합 (main 브랜치 가정)
         git add crawling_results/*
-        git commit -m "Add daily crawl result $(date +%Y%m%d)"
+        git commit -m "Add daily crawl result $(date +%Y%m%d)" || echo "No changes to commit"  # 변경 없으면 무시
         git push
