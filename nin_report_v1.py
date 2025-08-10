@@ -1,9 +1,10 @@
 import pandas as pd
+from pytz import timezone
 from datetime import datetime, timedelta
 import os
 
 # 현재 날짜와 하루 전 날짜 생성
-current_date = datetime.now()
+current_date = datetime.now(timezone('Asia/Seoul'))
 yesterday_date = current_date - timedelta(days=1)
 
 # 파일명에 사용할 날짜 형식 (yymmdd)
