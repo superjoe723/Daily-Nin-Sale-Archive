@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import csv
+from pytz import timezone
 from datetime import datetime
 import os
 import time
@@ -116,7 +117,7 @@ def main():
         print(f"폴더 생성됨: {download_folder}")
 
     # 현재 날짜를 YYMMDD 형식으로 가져오기 (파일명용)
-    date_str = datetime.now().strftime("%y%m%d")
+    date_str = datetime.now(timezone('Asia/Seoul')).strftime("%y%m%d")
     # 파일명 생성
     filename = f"nintendo_sale_{date_str}.csv"
     # 전체 경로 설정
