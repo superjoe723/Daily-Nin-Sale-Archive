@@ -22,7 +22,7 @@ def scrape_page(soup):
         print("게임 요소를 찾을 수 없습니다. HTML 구조를 확인하세요.")
 
     # 현재 날짜 (YYYY-MM-DD 형식)
-    current_date = datetime.now().strftime("%Y-%m-%d")
+    current_date = datetime.now(timezone('Asia/Seoul')).strftime("%Y-%m-%d")
 
     for game in game_elements:
         try:
